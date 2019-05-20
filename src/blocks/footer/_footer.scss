@@ -1,0 +1,49 @@
+.page-footer {
+	padding: 30px 0;
+	background-color: $color-gray;
+	color: #ffffff;
+	font-family: $roboto;
+	font-size: 13px;
+	
+	&__wrap {
+		@include container-fixed();
+	}
+
+	&__copyright {
+		margin-bottom: 20px;
+		line-height: 26px;
+	}
+
+	&__creator-icon {
+		background-image: url("../img/creator-icon.png");
+		width: 29px;
+		height: 26px;
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	a:hover {
+		opacity: .7;
+	}
+}
+
+@media (min-width: $screen-lg) {
+  .page-footer {
+		padding: 50px 0;
+
+    &__wrap {
+      width: $screen-lg;
+		}
+		
+		&__copyright {
+			@include make-lg-column(4,0);
+			margin-bottom: 0;
+		}
+
+		&__creator {
+			@include make-lg-column(3,0);
+			@include make-lg-column-offset(5);
+			text-align: right;
+		}
+  }
+}

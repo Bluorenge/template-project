@@ -1,0 +1,116 @@
+.features {
+  font-family: $gotham;
+  color: #ffffff;
+	text-transform: uppercase;
+	text-align: center;
+  background-color: $color-blue;
+	padding-top: 75px;
+	padding-bottom: 30px;
+	
+  &__wrap {
+    @include container-fixed();
+  }
+
+  &__title {
+    margin: auto;
+    font-size: calc(2vw + 2vh + 1vmin);
+    margin-bottom: 70px;
+		position: relative;
+		font-weight: 500;
+  }
+
+  &__title::before {
+    content: "W";
+    position: absolute;
+    top: -40px;
+    left: -3px;
+    text-align: center;
+    width: 100%;
+    font-size: 120px;
+    color: rgba($color: #ffffff, $alpha: 0.18);
+    font-family: $roboto;
+    font-weight: 700;
+  }
+
+  &__item {
+		width: 280px;
+		margin: auto;
+		margin-bottom: 30px;
+	}
+
+	&__item-icon {
+		display: block;
+		width: 133px;
+		height: 133px;
+		margin: auto;
+		margin-bottom: 20px;
+		background-color: $color-blue-light;
+		border-radius: 70px;
+		@extend %fa-icon;
+		@extend .fas;
+		font-size: 34px;
+		position: relative;
+	}
+
+	&__item-icon::before {
+		position: absolute;
+		top: 37%;
+		left: 39%;
+	}
+
+	&__item-icon--edit::before {
+		content: fa-content($fa-var-edit);
+	}
+
+	&__item-icon--search::before {
+		content: fa-content($fa-var-search); 
+	}
+
+	&__item-icon--comment {
+		@extend .far;
+	}
+
+	&__item-icon--comment::before {
+		content: fa-content($fa-var-comment);
+	}
+	
+	&__item-title {
+		font-size: 18px;
+		font-weight: 500;
+		margin-bottom: 30px;
+	}
+
+	&__item-text {
+		font-size: 15px;
+		font-weight: 350;
+		line-height: 24px;
+		text-transform: none;
+	}
+
+}
+
+@media (min-width: $screen-lg) {
+  .features {
+		padding-top: 170px;
+		padding-bottom: 125px;
+
+    &__wrap {
+      width: $screen-lg;
+		}
+		
+		&__title {
+			font-size: 37px;
+			margin-bottom: 140px;
+		}
+	
+		&__title::before {
+			top: -110px;
+			font-size: 240px;
+		}
+
+		&__item {
+			@include make-lg-column(3, 30px);
+			margin: 0;
+		}
+  }
+}

@@ -1,0 +1,52 @@
+.action {
+	padding-top: 60px;
+	padding-bottom: 30px;
+	background-color: $color-blue;
+	color: #ffffff;
+	font-family: $gotham;
+	font-weight: 350;
+	font-size: 15px;
+	line-height: 24px;
+
+	&__list {
+		@include container-fixed();
+	}
+
+	&__item {
+		margin-bottom: 30px;
+	}
+
+	&__item-icon {
+		@extend %fa-icon;
+		@extend .fas;
+		
+		&:before {
+			font-size: 40px;
+			content: fa-content($fa-var-edit);
+		}
+	}
+}
+
+@media (min-width: $screen-lg) {
+  .action {
+		padding-top: 110px;
+		padding-bottom: 150px;
+
+    &__list {
+      width: $screen-lg;
+		}
+		
+		&__item {
+			@include make-lg-column(5, 0);
+			padding-right: 30px;
+		}
+
+		&__item-icon {
+			@include make-lg-column(1, 0);
+			
+			&:before {
+				font-size: 69px;
+			}
+		}
+  }
+}

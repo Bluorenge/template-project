@@ -1,0 +1,109 @@
+.feedback {
+  font-family: $gotham;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-align: center;
+  padding-top: 70px;
+  padding-bottom: 60px;
+  background: url(../img/feedback-bg.jpg) center top no-repeat #313131;
+  background-size: cover;
+
+  &__wrap {
+    @include container-fixed();
+  }
+
+  &__title {
+    font-size: calc(2vw + 2vh + 1vmin);
+    margin-bottom: 60px;
+    position: relative;
+    color: #ffffff;
+  }
+
+  &__title::before {
+    content: "C";
+    position: absolute;
+    top: -24px;
+    left: -3px;
+    width: 100%;
+    font-size: 120px;
+    color: rgba($color: #ffffff, $alpha: 0.18);
+    font-family: $roboto;
+    font-weight: 700;
+  }
+
+  &__input,
+  &__message {
+    width: 100%;
+    margin-bottom: 40px;
+    background-color: transparent;
+    padding: 20px;
+    color: #ffffff;
+    font-weight: 350;
+    border: 1px solid #ffffff;
+  }
+
+  &__input:focus,
+  &__message:focus {
+    border-color: $color-blue;
+    outline: none;
+  }
+
+  &__input::-webkit-input-placeholder,
+  &__message::-webkit-input-placeholder {
+    color: #ffffff;
+  }
+
+  &__btn {
+    width: 180px;
+    height: 50px;
+    line-height: 50px;
+    background-color: $color-blue;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-family: $gotham;
+    font-weight: 500;
+    font-size: 20px;
+  }
+
+  &__btn:hover {
+    opacity: 0.7;
+  }
+}
+
+@media (min-width: $screen-lg) {
+  .feedback {
+    padding-top: 220px;
+    padding-bottom: 100px;
+
+    &__wrap {
+      width: $screen-lg;
+    }
+
+    &__title {
+      font-size: 37px;
+      margin-bottom: 145px;
+    }
+
+    &__title::before {
+      top: -115px;
+      left: 0;
+      font-size: 240px;
+    }
+
+    &__input-wrap {
+      @include make-lg-column(4, 0);
+      padding-right: 30px;
+    }
+
+    &__input-wrap:nth-of-type(3) {
+      padding-right: 0;
+    }
+
+    &__btn {
+      width: 225px;
+      height: 65px;
+      line-height: 65px;
+      font-size: 24px;
+    }
+  }
+}

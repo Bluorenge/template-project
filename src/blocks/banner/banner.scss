@@ -1,0 +1,99 @@
+.banner {
+	background: url(../img/banner-bg.jpg) center top no-repeat #313131;
+	background-size: cover;
+	padding-top: 180px;
+	padding-bottom: 60px;
+	
+	&__wrap {
+		font-family: $gotham;
+		color: #ffffff;
+		text-align: center;
+		text-transform: uppercase;
+	}
+
+	&__title {
+		margin: auto;
+		margin-bottom: 20px;
+		font-size: calc(4vw + 4vh + 2vmin);
+		font-weight: 700;
+	}
+
+	&__promo {
+		margin: auto;
+		margin-bottom: 115px;
+		font-size: calc(1vw + 1vh + 1vmin);
+		font-weight: 500;
+		color: $color-blue;
+	}
+
+	&__scroll-wrap {
+		margin: auto;
+		text-transform: none;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	&__scroll-text {
+		font-family: $opensans;
+		font-weight: 400;
+    margin-bottom: 10px;
+		font-size: 14px;
+    cursor: pointer;
+	}
+
+	&__scroll-icon {
+		width: 40px;
+		height: 40px;
+		border: 1px solid #ffffff;
+		border-radius: 35px;
+		@extend %fa-icon;
+		@extend .fas;
+		line-height: 40px;
+		font-size: 20px;
+		text-align: center;
+    cursor: pointer;
+	}
+
+	&__scroll-text:hover,
+	&__scroll-icon:hover {
+		opacity: .7;
+	}
+
+	&__scroll-icon::before {
+		content: fa-content($fa-var-angle-down);
+	}
+}
+
+@media (min-width: $screen-lg) {
+  .banner {
+		padding-top: 360px;
+		padding-bottom: 110px;
+
+    &__wrap {
+			width: $screen-lg;
+			margin: auto;
+		}
+		
+		&__title {
+			font-size: 152px;
+			line-height: 152px;
+		}
+
+		&__promo {
+			font-size: 25px;
+			letter-spacing: 20px;
+		}
+
+		&__scroll-text {
+			margin-bottom: 20px;
+			font-size: 16px;
+		}
+
+		&__scroll-icon {
+			width: 65px;
+			height: 65px;
+			line-height: 65px;
+		}
+  }
+}

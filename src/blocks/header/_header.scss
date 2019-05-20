@@ -1,0 +1,247 @@
+.page-header {
+  width: 100%;
+  font-family: $myriad;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 20px;
+  position: absolute;
+  top: 0;
+  border-bottom: 1px solid rgba($color: #ffffff, $alpha: 0.38);
+
+  &--fixed {
+    position: fixed;
+    z-index: 10;
+    background-color: rgba($color: #000000, $alpha: 0.85);
+    animation: showElement;
+    animation-duration: 1s;
+  }
+
+  @keyframes showElement {
+    0% {
+      opacity: 0;
+      top: -70px;
+    }
+
+    100% {
+      opacity: 1;
+      top: 0;
+    }
+  }
+
+  &__wrap {
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 15px;
+  }
+
+  &__logo {
+    width: 40px;
+    height: 40px;
+    background-color: $color-blue;
+    box-shadow: rgba($color: #ffffff, $alpha: 0.75) 4px 3px;
+    font-size: 20px;
+    line-height: 40px;
+    text-align: center;
+  }
+
+  &__toggle-wrap {
+    width: 30px;
+    height: 23px;
+  }
+
+  &__toggle {
+    display: block;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+    background: $color-blue;
+    border-radius: 3px;
+    transform-origin: 4px 0px;
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+      background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+  }
+
+  &__toggle:nth-child(2) {
+    transform-origin: 0% 100%;
+  }
+
+  &__toggle:first-child {
+    transform-origin: 0% 0%;
+  }
+
+  &__toggle:last-child {
+    margin-bottom: 0;
+  }
+
+  &__toggle-wrap--cross &__toggle {
+    transform: rotate(45deg) translate(1px, -2px);
+  }
+
+  &__toggle-wrap--cross &__toggle:nth-child(2) {
+    transform: rotate(-45deg) translate(-6px, 8px);
+  }
+
+  &__toggle-wrap--cross &__toggle:last-child {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+  }
+
+  &__nav-item {
+    flex-grow: 1;
+    text-align: center;
+  }
+
+  &__nav-item a {
+    border-bottom: 1px solid rgba($color: #ffffff, $alpha: 0.5);
+    padding: 14px;
+    height: 100%;
+    width: 100%;
+    display: block;
+  }
+
+  &__nav-item:not(&__nav-item--active) a:hover {
+    border-bottom: 6px solid $color-blue;
+    color: rgba($color: #ffffff, $alpha: 0.5);
+  }
+
+  &__social-items {
+    display: flex;
+    justify-content: flex-end;
+    height: 100%;
+  }
+
+  &__social-item a {
+    height: 100%;
+    padding-top: 27px;
+    padding-left: 20px;
+    width: 100%;
+  }
+
+  &__nav-item--active a {
+    background-color: rgba(255, 255, 255, 0.75);
+  }
+
+  &__social-item a:hover {
+    opacity: 0.7;
+  }
+
+  &__nav {
+    background-color: rgba(0, 0, 0, 0.85);
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    order: 3;
+    visibility: hidden;
+  }
+  
+  &__nav--open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: all .3s ease;
+  }
+  
+  &__nav--close {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all .3s ease;
+  }
+
+  &__social-item--fb,
+  &__social-item--tw,
+  &__social-item--skype,
+  &__social-item--linkin {
+    @extend %fa-icon;
+    @extend .fab;
+    font-size: 16px;
+  }
+
+  &__social-item--fb::before {
+    content: fa-content($fa-var-facebook-f);
+  }
+
+  &__social-item--tw::before {
+    content: fa-content($fa-var-twitter);
+  }
+
+  &__social-item--skype::before {
+    content: fa-content($fa-var-skype);
+  }
+
+  &__social-item--linkin::before {
+    content: fa-content($fa-var-linkedin-in);
+  }
+}
+
+@media (min-width: $screen-lg) {
+  .page-header {
+    &__wrap {
+      width: $screen-lg;
+      @include container-fixed();
+      height: 115px;
+    }
+
+    &__logo-wrap {
+      @include make-lg-column(3, 0);
+    }
+
+    &__logo {
+      box-shadow: rgba($color: #ffffff, $alpha: 0.75) 12px 8px;
+      width: 67px;
+      height: 67px;
+      line-height: 67px;
+      font-size: 30px;
+    }
+
+    &__toggle {
+      display: none;
+    }
+
+    &__nav {
+      @include make-lg-column(7, 0);
+      display: flex;
+      flex-direction: row;
+      order: 0;
+      justify-content: space-between;
+      height: 100%;
+      visibility: visible;
+      background-color: transparent;
+    }
+
+    &__nav--close {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+
+    &__nav-item a {
+      padding: 0;
+      padding-top: 46px;
+      border: none;
+    }
+
+    &__nav-item--active a {
+      background-color: transparent;
+      border-bottom: 6px solid $color-blue;
+      cursor: default;
+    }
+
+    &__social-items {
+      @include make-lg-column(2, 0);
+    }
+
+    &__social-item a {
+      padding-top: 46px;
+    }
+
+    &__social-item--fb,
+    &__social-item--tw,
+    &__social-item--skype,
+    &__social-item--linkin {
+      font-size: 20px;
+    }
+  }
+}

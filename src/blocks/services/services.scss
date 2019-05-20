@@ -1,0 +1,82 @@
+.services {
+  background: url(../img/services-bg.jpg) center top no-repeat #313131;
+  background-size: cover;
+  padding: 60px 0;
+  color: #ffffff;
+  font-family: $gotham;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 15px;
+
+  &__wrap {
+    @include container-fixed();
+  }
+
+  &__title {
+    font-size: 25px;
+    margin-bottom: 30px;
+  }
+
+  &__text {
+    font-weight: 350;
+    line-height: 24px;
+    text-transform: none;
+    margin-bottom: 30px;
+  }
+
+  &__item {
+    height: 40px;
+    background-color: $color-blue;
+    margin-bottom: 25px;
+    line-height: 40px;
+    padding-left: 20px;
+  }
+
+  &__item-1 {
+    max-width: 370px;
+  }
+
+  &__item-2 {
+    max-width: 400px;
+  }
+
+  &__item-3 {
+    max-width: 430px;
+  }
+
+  &__right-col img {
+    width: 100%;
+  }
+}
+
+@media (min-width: $screen-lg) {
+  .services {
+    padding: 100px 0;
+
+    &__wrap {
+      width: $screen-lg;
+    }
+
+    &__left-col {
+      @include make-lg-column(5, 0);
+      padding-top: 120px;
+    }
+
+    &__title {
+      margin-bottom: 35px;
+    }
+
+    &__text {
+      margin-bottom: 60px;
+    }
+
+    &__right-col {
+      @include make-lg-column(5, 0);
+      @include make-lg-column-offset(2);
+    }
+
+    &__right-col img {
+      width: auto;
+    }
+  }
+}
