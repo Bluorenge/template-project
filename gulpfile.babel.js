@@ -79,7 +79,7 @@ const webpackConfig = require("./webpack.config.js"),
 			watch: "./src/img/**/*_webp.{jpg,jpeg,png}"
 		},
 		fonts: {
-			src: "./src/fonts/**/*.{ttf,otf,woff,woff2}",
+			src: "./src/fonts/**/*.{eot,ttf,otf,woff,woff2}",
 			dist: "./dist/fonts/",
 			watch: "./src/fonts/**/*.{ttf,otf,woff,woff2}"
 		},
