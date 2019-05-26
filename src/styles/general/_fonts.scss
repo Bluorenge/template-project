@@ -6,6 +6,7 @@
   src: url("../fonts/MyriadPro/MyriadPro-Regular.woff") format("woff"),
     url("../fonts/Gotham/Gotham-Black.woff2") format("woff2"),
     url("../fonts/MyriadPro/MyriadPro-Regular.ttf") format("truetype");
+  font-display: fallback;
 }
 
 @font-face {
@@ -15,6 +16,7 @@
   src: url("../fonts/Gotham/Gotham-Book.woff") format("woff"),
     url("../fonts/Gotham/Gotham-Book.woff2") format("woff2"),
     url("../fonts/Gotham/Gotham-Book.ttf") format("truetype");
+  font-display: fallback;
 }
 
 @font-face {
@@ -24,6 +26,7 @@
   src: url("../fonts/Gotham/Gotham-Black.woff") format("woff"),
     url("../fonts/Gotham/Gotham-Black.woff2") format("woff2"),
     url("../fonts/Gotham/Gotham-Black.ttf") format("truetype");
+  font-display: fallback;
 }
 
 @font-face {
@@ -33,6 +36,7 @@
   src: url("../fonts/Gotham/Gotham-Medium.woff") format("woff"),
     url("../fonts/Gotham/Gotham-Medium.woff2") format("woff2"),
     url("../fonts/Gotham/Gotham-Medium.ttf") format("truetype");
+  font-display: fallback;
 }
 
 @font-face {
@@ -42,6 +46,7 @@
   src: url("../fonts/Gotham/Gotham-Bold.woff") format("woff"),
     url("../fonts/Gotham/Gotham-Bold.woff2") format("woff2"),
     url("../fonts/Gotham/Gotham-Bold.ttf") format("truetype");
+  font-display: fallback;
 }
 
 @font-face {
@@ -51,6 +56,7 @@
   src: url("../fonts/Roboto/Roboto-Bold.woff") format("woff"),
     url("../fonts/Roboto/Roboto-Bold.woff2") format("woff2"),
     url("../fonts/Roboto/Roboto-Bold.ttf") format("truetype");
+  font-display: fallback;
 }
 
 @font-face {
@@ -60,4 +66,5 @@
   src: url("../fonts/OpenSans/OpenSans-Regular.woff") format("woff"),
     url("../fonts/OpenSans/OpenSans-Regular.woff2") format("woff2"),
     url("../fonts/OpenSans/OpenSans-Regular.ttf") format("truetype");
+  font-display: fallback;
 }

@@ -34,13 +34,6 @@
 	AddOutputFilterByType DEFLATE image/svg+xml
 	AddOutputFilterByType DEFLATE image/x-icon
 
-	AddType font/ttf
-	AddType font/eot
-	AddType font/otf
-	AddType x-font/woff
-	AddType font/woff2
-
-
 	#For olders browsers which can't handle compression
 	BrowserMatch ^Mozilla/4 gzip-only-text/html
 	BrowserMatch ^Mozilla/4\.0[678] no-gzip
